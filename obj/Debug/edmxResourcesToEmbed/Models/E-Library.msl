@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="E_Library">
+    <EntitySetMapping Name="admins">
+      <EntityTypeMapping TypeName="Model.admin">
+        <MappingFragment StoreEntitySet="admin">
+          <ScalarProperty Name="adminID" ColumnName="adminID" />
+          <ScalarProperty Name="admin_name" ColumnName="admin_name" />
+          <ScalarProperty Name="admin_username" ColumnName="admin_username" />
+          <ScalarProperty Name="admin_password" ColumnName="admin_password" />
+          <ScalarProperty Name="teacherID" ColumnName="teacherID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="systemID" ColumnName="systemID" />
+          <ScalarProperty Name="subjectID" ColumnName="subjectID" />
+          <ScalarProperty Name="exam_bankID" ColumnName="exam_bankID" />
+          <ScalarProperty Name="fileID" ColumnName="fileID" />
+          <ScalarProperty Name="notificationID" ColumnName="notificationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="exam_and_test_management">
+      <EntityTypeMapping TypeName="Model.exam_and_test_management">
+        <MappingFragment StoreEntitySet="exam_and_test_management">
+          <ScalarProperty Name="exam_and_test_ID" ColumnName="exam_and_test_ID" />
+          <ScalarProperty Name="exam_and_test_name" ColumnName="exam_and_test_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="exam_bank_management">
+      <EntityTypeMapping TypeName="Model.exam_bank_management">
+        <MappingFragment StoreEntitySet="exam_bank_management">
+          <ScalarProperty Name="exam_bankID" ColumnName="exam_bankID" />
+          <ScalarProperty Name="exam_bank_name" ColumnName="exam_bank_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="file_management">
+      <EntityTypeMapping TypeName="Model.file_management">
+        <MappingFragment StoreEntitySet="file_management">
+          <ScalarProperty Name="fileID" ColumnName="fileID" />
+          <ScalarProperty Name="file_name" ColumnName="file_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="help_management">
+      <EntityTypeMapping TypeName="Model.help_management">
+        <MappingFragment StoreEntitySet="help_management">
+          <ScalarProperty Name="helpID" ColumnName="helpID" />
+          <ScalarProperty Name="help_name" ColumnName="help_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lession_management">
+      <EntityTypeMapping TypeName="Model.lession_management">
+        <MappingFragment StoreEntitySet="lession_management">
+          <ScalarProperty Name="lessionID" ColumnName="lessionID" />
+          <ScalarProperty Name="lession_name" ColumnName="lession_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notification_management">
+      <EntityTypeMapping TypeName="Model.notification_management">
+        <MappingFragment StoreEntitySet="notification_management">
+          <ScalarProperty Name="notificationID" ColumnName="notificationID" />
+          <ScalarProperty Name="notification_name" ColumnName="notification_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="resource_management">
+      <EntityTypeMapping TypeName="Model.resource_management">
+        <MappingFragment StoreEntitySet="resource_management">
+          <ScalarProperty Name="resourceID" ColumnName="resourceID" />
+          <ScalarProperty Name="resource_name" ColumnName="resource_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subject_management">
+      <EntityTypeMapping TypeName="Model.subject_management">
+        <MappingFragment StoreEntitySet="subject_management">
+          <ScalarProperty Name="subjectID" ColumnName="subjectID" />
+          <ScalarProperty Name="subject_name" ColumnName="subject_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Model.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="system_management">
+      <EntityTypeMapping TypeName="Model.system_management">
+        <MappingFragment StoreEntitySet="system_management">
+          <ScalarProperty Name="systemID" ColumnName="systemID" />
+          <ScalarProperty Name="system_name" ColumnName="system_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teachers">
+      <EntityTypeMapping TypeName="Model.teacher">
+        <MappingFragment StoreEntitySet="teacher">
+          <ScalarProperty Name="teacherID" ColumnName="teacherID" />
+          <ScalarProperty Name="teacher_name" ColumnName="teacher_name" />
+          <ScalarProperty Name="subjectID" ColumnName="subjectID" />
+          <ScalarProperty Name="lessionID" ColumnName="lessionID" />
+          <ScalarProperty Name="resourceID" ColumnName="resourceID" />
+          <ScalarProperty Name="exam_and_test_ID" ColumnName="exam_and_test_ID" />
+          <ScalarProperty Name="notificationID" ColumnName="notificationID" />
+          <ScalarProperty Name="helpID" ColumnName="helpID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_management">
+      <EntityTypeMapping TypeName="Model.user_management">
+        <MappingFragment StoreEntitySet="user_management">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="role" ColumnName="role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

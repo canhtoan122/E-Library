@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="adminID" />
+    </Key>
+    <Property Name="adminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="admin_name" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="admin_username" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="admin_password" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="teacherID" Type="int" />
+    <Property Name="userID" Type="int" />
+    <Property Name="systemID" Type="int" />
+    <Property Name="subjectID" Type="int" />
+    <Property Name="exam_bankID" Type="int" />
+    <Property Name="fileID" Type="int" />
+    <Property Name="notificationID" Type="int" />
+  </EntityType>
+  <EntityType Name="exam_and_test_management">
+    <Key>
+      <PropertyRef Name="exam_and_test_ID" />
+    </Key>
+    <Property Name="exam_and_test_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="exam_and_test_name" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="exam_bank_management">
+    <Key>
+      <PropertyRef Name="exam_bankID" />
+    </Key>
+    <Property Name="exam_bankID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="exam_bank_name" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="file_management">
+    <Key>
+      <PropertyRef Name="fileID" />
+    </Key>
+    <Property Name="fileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="file_name" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="help_management">
+    <Key>
+      <PropertyRef Name="helpID" />
+    </Key>
+    <Property Name="helpID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="help_name" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="lession_management">
+    <Key>
+      <PropertyRef Name="lessionID" />
+    </Key>
+    <Property Name="lessionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lession_name" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="notification_management">
+    <Key>
+      <PropertyRef Name="notificationID" />
+    </Key>
+    <Property Name="notificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="notification_name" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="resource_management">
+    <Key>
+      <PropertyRef Name="resourceID" />
+    </Key>
+    <Property Name="resourceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="resource_name" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="subject_management">
+    <Key>
+      <PropertyRef Name="subjectID" />
+    </Key>
+    <Property Name="subjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="subject_name" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="system_management">
+    <Key>
+      <PropertyRef Name="systemID" />
+    </Key>
+    <Property Name="systemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="system_name" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="teacher">
+    <Key>
+      <PropertyRef Name="teacherID" />
+    </Key>
+    <Property Name="teacherID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="teacher_name" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="subjectID" Type="int" />
+    <Property Name="lessionID" Type="int" />
+    <Property Name="resourceID" Type="int" />
+    <Property Name="exam_and_test_ID" Type="int" />
+    <Property Name="notificationID" Type="int" />
+    <Property Name="helpID" Type="int" />
+    <Property Name="userID" Type="int" />
+  </EntityType>
+  <EntityType Name="user_management">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="role" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__admin__exam_bank__628FA481">
+    <End Role="exam_bank_management" Type="Self.exam_bank_management" Multiplicity="0..1" />
+    <End Role="admin" Type="Self.admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="exam_bank_management">
+        <PropertyRef Name="exam_bankID" />
+      </Principal>
+      <Dependent Role="admin">
+        <PropertyRef Name="exam_bankID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__admin__fileID__6383C8BA">
+    <End Role="file_management" Type="Self.file_management" Multiplicity="0..1" />
+    <End Role="admin" Type="Self.admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="file_management">
+        <PropertyRef Name="fileID" />
+      </Principal>
+      <Dependent Role="admin">
+        <PropertyRef Name="fileID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__admin__notificat__6477ECF3">
+    <End Role="notification_management" Type="Self.notification_management" Multiplicity="0..1" />
+    <End Role="admin" Type="Self.admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="notification_management">
+        <PropertyRef Name="notificationID" />
+      </Principal>
+      <Dependent Role="admin">
+        <PropertyRef Name="notificationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__admin__subjectID__619B8048">
+    <End Role="subject_management" Type="Self.subject_management" Multiplicity="0..1" />
+    <End Role="admin" Type="Self.admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subject_management">
+        <PropertyRef Name="subjectID" />
+      </Principal>
+      <Dependent Role="admin">
+        <PropertyRef Name="subjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__admin__systemID__60A75C0F">
+    <End Role="system_management" Type="Self.system_management" Multiplicity="0..1" />
+    <End Role="admin" Type="Self.admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="system_management">
+        <PropertyRef Name="systemID" />
+      </Principal>
+      <Dependent Role="admin">
+        <PropertyRef Name="systemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__admin__teacherID__66603565">
+    <End Role="teacher" Type="Self.teacher" Multiplicity="0..1" />
+    <End Role="admin" Type="Self.admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="teacher">
+        <PropertyRef Name="teacherID" />
+      </Principal>
+      <Dependent Role="admin">
+        <PropertyRef Name="teacherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__admin__userID__5EBF139D">
+    <End Role="user_management" Type="Self.user_management" Multiplicity="0..1" />
+    <End Role="admin" Type="Self.admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user_management">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="admin">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__teacher__exam_an__4F7CD00D">
+    <End Role="exam_and_test_management" Type="Self.exam_and_test_management" Multiplicity="0..1" />
+    <End Role="teacher" Type="Self.teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="exam_and_test_management">
+        <PropertyRef Name="exam_and_test_ID" />
+      </Principal>
+      <Dependent Role="teacher">
+        <PropertyRef Name="exam_and_test_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__teacher__helpID__5165187F">
+    <End Role="help_management" Type="Self.help_management" Multiplicity="0..1" />
+    <End Role="teacher" Type="Self.teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="help_management">
+        <PropertyRef Name="helpID" />
+      </Principal>
+      <Dependent Role="teacher">
+        <PropertyRef Name="helpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__teacher__lession__4D94879B">
+    <End Role="lession_management" Type="Self.lession_management" Multiplicity="0..1" />
+    <End Role="teacher" Type="Self.teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lession_management">
+        <PropertyRef Name="lessionID" />
+      </Principal>
+      <Dependent Role="teacher">
+        <PropertyRef Name="lessionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__teacher__notific__5070F446">
+    <End Role="notification_management" Type="Self.notification_management" Multiplicity="0..1" />
+    <End Role="teacher" Type="Self.teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="notification_management">
+        <PropertyRef Name="notificationID" />
+      </Principal>
+      <Dependent Role="teacher">
+        <PropertyRef Name="notificationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__teacher__resourc__4E88ABD4">
+    <End Role="resource_management" Type="Self.resource_management" Multiplicity="0..1" />
+    <End Role="teacher" Type="Self.teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="resource_management">
+        <PropertyRef Name="resourceID" />
+      </Principal>
+      <Dependent Role="teacher">
+        <PropertyRef Name="resourceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__teacher__subject__4CA06362">
+    <End Role="subject_management" Type="Self.subject_management" Multiplicity="0..1" />
+    <End Role="teacher" Type="Self.teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subject_management">
+        <PropertyRef Name="subjectID" />
+      </Principal>
+      <Dependent Role="teacher">
+        <PropertyRef Name="subjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__teacher__userID__656C112C">
+    <End Role="user_management" Type="Self.user_management" Multiplicity="0..1" />
+    <End Role="teacher" Type="Self.teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user_management">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="teacher">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="exam_and_test_management" EntityType="Self.exam_and_test_management" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="exam_bank_management" EntityType="Self.exam_bank_management" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="file_management" EntityType="Self.file_management" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="help_management" EntityType="Self.help_management" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="lession_management" EntityType="Self.lession_management" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="notification_management" EntityType="Self.notification_management" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="resource_management" EntityType="Self.resource_management" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subject_management" EntityType="Self.subject_management" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="system_management" EntityType="Self.system_management" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="teacher" EntityType="Self.teacher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user_management" EntityType="Self.user_management" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__admin__exam_bank__628FA481" Association="Self.FK__admin__exam_bank__628FA481">
+      <End Role="exam_bank_management" EntitySet="exam_bank_management" />
+      <End Role="admin" EntitySet="admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK__admin__fileID__6383C8BA" Association="Self.FK__admin__fileID__6383C8BA">
+      <End Role="file_management" EntitySet="file_management" />
+      <End Role="admin" EntitySet="admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK__admin__notificat__6477ECF3" Association="Self.FK__admin__notificat__6477ECF3">
+      <End Role="notification_management" EntitySet="notification_management" />
+      <End Role="admin" EntitySet="admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK__admin__subjectID__619B8048" Association="Self.FK__admin__subjectID__619B8048">
+      <End Role="subject_management" EntitySet="subject_management" />
+      <End Role="admin" EntitySet="admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK__admin__systemID__60A75C0F" Association="Self.FK__admin__systemID__60A75C0F">
+      <End Role="system_management" EntitySet="system_management" />
+      <End Role="admin" EntitySet="admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK__admin__teacherID__66603565" Association="Self.FK__admin__teacherID__66603565">
+      <End Role="teacher" EntitySet="teacher" />
+      <End Role="admin" EntitySet="admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK__admin__userID__5EBF139D" Association="Self.FK__admin__userID__5EBF139D">
+      <End Role="user_management" EntitySet="user_management" />
+      <End Role="admin" EntitySet="admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK__teacher__exam_an__4F7CD00D" Association="Self.FK__teacher__exam_an__4F7CD00D">
+      <End Role="exam_and_test_management" EntitySet="exam_and_test_management" />
+      <End Role="teacher" EntitySet="teacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK__teacher__helpID__5165187F" Association="Self.FK__teacher__helpID__5165187F">
+      <End Role="help_management" EntitySet="help_management" />
+      <End Role="teacher" EntitySet="teacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK__teacher__lession__4D94879B" Association="Self.FK__teacher__lession__4D94879B">
+      <End Role="lession_management" EntitySet="lession_management" />
+      <End Role="teacher" EntitySet="teacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK__teacher__notific__5070F446" Association="Self.FK__teacher__notific__5070F446">
+      <End Role="notification_management" EntitySet="notification_management" />
+      <End Role="teacher" EntitySet="teacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK__teacher__resourc__4E88ABD4" Association="Self.FK__teacher__resourc__4E88ABD4">
+      <End Role="resource_management" EntitySet="resource_management" />
+      <End Role="teacher" EntitySet="teacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK__teacher__subject__4CA06362" Association="Self.FK__teacher__subject__4CA06362">
+      <End Role="subject_management" EntitySet="subject_management" />
+      <End Role="teacher" EntitySet="teacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK__teacher__userID__656C112C" Association="Self.FK__teacher__userID__656C112C">
+      <End Role="user_management" EntitySet="user_management" />
+      <End Role="teacher" EntitySet="teacher" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

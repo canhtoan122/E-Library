@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="df00a1abce4e49d7a078431b1a022abb" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.admin" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.exam_and_test_management" Width="1.5" PointX="3.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.exam_bank_management" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.file_management" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.help_management" Width="1.5" PointX="3.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.lession_management" Width="1.5" PointX="3.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.notification_management" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.resource_management" Width="1.5" PointX="3.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.subject_management" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.system_management" Width="1.5" PointX="0.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.teacher" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.user_management" Width="1.5" PointX="3.75" PointY="18.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK__admin__exam_bank__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__admin__fileID__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__admin__notificat__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__admin__subjectID__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__admin__systemID__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__admin__teacherID__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__admin__userID__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__teacher__exam_an__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__teacher__helpID__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__teacher__lession__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__teacher__notific__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__teacher__resourc__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__teacher__subject__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__teacher__userID__656C112C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
